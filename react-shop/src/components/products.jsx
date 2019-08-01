@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import Product from "./product"
 
 class Products extends Component {
+    state = {
+        count: 0
+    }
 
     render() { 
+        const {onIncrement, onDecrement, onAddToCart} = this.props;
         return ( 
-            <table class="table">
-                <thead class="thead-light">
+            <table className="table">
+                <thead className="thead-light">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
@@ -17,7 +21,11 @@ class Products extends Component {
                 </thead>
                 <tbody>
                     {this.props.products.map(product => 
-                    <Product product={product}/>)}
+                    <Product key={product.id}
+                            product={product}
+                            onIncrement={onIncrement}
+                            onDecrement={onDecrement}
+                            onAddToCart={onAddToCart}/>)}
                 </tbody>
             </table>
         );
