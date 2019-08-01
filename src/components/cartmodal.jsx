@@ -22,12 +22,14 @@ const CartModal = (props) => {
                             <td>{p.inCart} Item/s</td>
                         </tr>
                     )
-                }})
+                }return null})
             }
         </tbody>
     </table>
 
     ReactDOM.render(modalContent, document.querySelector(".modal-body"));
+
+
 }
  
 export default CartModal;

@@ -17,7 +17,7 @@ class App extends Component {
 
 	getCartSum(){
 		let cartSum = 0;
-		this.state.products.map(p => {cartSum += p.inCart;})
+		this.state.products.map(p => cartSum += p.inCart)
 		return cartSum;
 	}	
 
@@ -31,6 +31,7 @@ class App extends Component {
 						<span className="badge badge-warning badge-pill ml-1">{this.getCartSum()}</span>
 					</button>
 				</nav>
+				<br/><br/>
 				<div className="container">
 					<Products products={this.state.products}
 							onIncrement={this.handleIncrement}
