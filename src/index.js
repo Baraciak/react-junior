@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap";
-import { BrowserRouter as Router, Route} from "react-router-dom";
 import Payment from './components/payment';
+import App from './App';
 
 
 ReactDOM.render(
     <Router>
-        <Route path="/" exact component={App} />
-        <Route path="/payment/" component={Payment} />
+            <Route path={["/", "/home/:name/:surname"]} exact component={App} />
+            <Route path={"/payment"} component={Payment} />
     </Router>, document.getElementById('root'));
 
 //render payMent btn
